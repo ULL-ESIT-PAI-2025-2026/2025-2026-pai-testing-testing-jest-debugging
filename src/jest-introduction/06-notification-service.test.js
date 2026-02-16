@@ -86,7 +86,7 @@ describe('Mock Functions with jest.fn()', () => {
 });
 
 describe('Spying with jest.spyOn()', () => {
-  afterAll(() => {
+  afterEach(() => {
     jest.restoreAllMocks();
   });
 
