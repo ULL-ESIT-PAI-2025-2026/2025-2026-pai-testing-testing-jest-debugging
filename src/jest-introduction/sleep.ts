@@ -16,5 +16,5 @@
  * @example await sleep(2000); // Waits 2 seconds
  */
 export const sleep = (milliseconds: number) => {
-  new Promise<void>(resolve => setTimeout(resolve, milliseconds));
+  return new Promise<void>(resolve => setTimeout(resolve, milliseconds));
 }
