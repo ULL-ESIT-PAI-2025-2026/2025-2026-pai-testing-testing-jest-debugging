@@ -13,45 +13,45 @@
  * @desc    A simple shopping cart class that allows adding, removing items and calculating totals.
  */
 export class ShoppingCart {
-  private items = new Map<string, { price: number; qty: number }>();
+  private items = new Map<string, { price: number; quantity: number }>();
 
   /**
    *  @desc   Adds an item to the cart. If the item already exists, it updates the quantity.
    *          Price must be non-negative and quantity must be positive.
    * @param name 
    * @param price 
-   * @param qty 
+   * @param quantity 
    */
-  add(name: string, price: number, qty: number = 1): void {
+  add(name: string, price: number, quantity: number = 1): void {
     if (price < 0) throw new Error("price must be >= 0");
-    if (qty <= 0) throw new Error("qty must be > 0");
+    if (quantity <= 0) throw new Error("quantity must be > 0");
 
     const existing = this.items.get(name);
     if (!existing) {
-      this.items.set(name, { price, qty });
+      this.items.set(name, { price, quantity });
       return;
     }
 
     if (existing.price !== price) throw new Error("price mismatch");
-    existing.qty += qty;
+    existing.quantity += quantity;
   }
 
   /**
    * @desc   Removes a given quantity of an item from the cart. If quantity exceeds existing, 
    *         it removes the item completely. Quantity must be positive and item must exist in the cart.
    * @param name 
-   * @param qty 
+   * @param quantity 
    */
-  remove(name: string, qty: number = 1) {
-    if (qty <= 0) throw new Error("qty must be > 0");
+  remove(name: string, quantity: number = 1) {
+    if (quantity <= 0) throw new Error("quantity must be > 0");
 
     const existing = this.items.get(name);
     if (!existing) throw new Error("item not found");
 
-    if (qty >= existing.qty) {
+    if (quantity >= existing.quantity) {
       this.items.delete(name);
     } else {
-      existing.qty -= qty;
+      existing.quantity -= quantity;
     }
   }
 
@@ -61,7 +61,7 @@ export class ShoppingCart {
    * @returns quantity of the item in the cart
    */
   getQuantity(name: string) {
-    return this.items.get(name)?.qty ?? 0;
+    return this.items.get(name)?.quantity ?? 0;
   }
 
   /**
@@ -88,7 +88,7 @@ export class ShoppingCart {
    */
   getItemCount() {
     let total = 0;
-    for (const { qty } of this.items.values()) total += qty;
+    for (const { quantity } of this.items.values()) total += quantity;
     return total;
   }
 
@@ -98,7 +98,7 @@ export class ShoppingCart {
    */
   getSubtotal() {
     let total = 0;
-    for (const { price, qty } of this.items.values()) total += price * qty;
+    for (const { price, quantity } of this.items.values()) total += price * quantity;
     return total;
   }
 
