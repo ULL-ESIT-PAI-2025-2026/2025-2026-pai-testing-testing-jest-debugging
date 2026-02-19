@@ -9,7 +9,7 @@
  * @date    19/02/2026
  */
 
-import { Shape, Circle, Rectangle, describeShape } from "./shape";
+import { Shape, Circle, Rectangle } from "./shape";
 
 describe("Inheritance / polymorphism checks", () => {
   test("subclass instances are also instances of the base class", () => {
