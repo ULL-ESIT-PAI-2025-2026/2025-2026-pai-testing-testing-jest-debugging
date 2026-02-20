@@ -71,6 +71,11 @@ function main(): void {
   });
 }
 
-if (require.main === module) {
+/**
+ * @desc Logic to replace the CommonJS 'require.main' check for ES Modules.
+ */
+import { fileURLToPath } from 'url';
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }
