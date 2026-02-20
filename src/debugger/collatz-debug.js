@@ -50,5 +50,6 @@ function main() {
   
   console.log('Sequence finished:', result.join(' -> '));
 }
-
-main();
+if (require.main === module) {
+  main();
+}
