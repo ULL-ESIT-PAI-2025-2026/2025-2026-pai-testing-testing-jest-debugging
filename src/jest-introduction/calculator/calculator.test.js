@@ -13,17 +13,13 @@
 const {add} = require('./calculator');
 
 describe('Calculator Logic', () => {
-  /**
-   * Test case for the add function.
-   */
+  /** Test case for the add function. */
   it('should return 5 when adding 2 and 3', () => {
     const result = add(2, 3);
     expect(result).toBe(5);
   });
 
-  /**
-   * Test case for negative numbers.
-   */
+  /** Test case for negative numbers. */
   it('should handle negative numbers correctly', () => {
     expect(add(-1, -1)).toBe(-2);
   });
