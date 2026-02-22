@@ -24,7 +24,7 @@ describe('Create User Matchers', () => {
   /**
    * Demonstrates identity check.
    */
-  it('should distinguish between different instances (toBe)', () => {
+  it('FAILS: should distinguish between different instances (toBe)', () => {
     const result = createUser('Guillermo');
     const expected = {name: 'Guillermo', active: true};
 
