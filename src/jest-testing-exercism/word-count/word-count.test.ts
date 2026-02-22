@@ -41,7 +41,7 @@ describe('count()', () => {
         javascript: 1,
       })
     )
-    expect(count('car: carpet as java: javascript!!&@$%^&"')).toEqual(
+    expect(count('car: carpet as java: javascript!!&@$%^&'')).toEqual(
       expectedCounts
     )
   })
@@ -60,17 +60,17 @@ describe('count()', () => {
     const expectedCounts = new Map(
       Object.entries({
         first: 1,
-        "don't": 2,
+        'don't': 2,
         laugh: 1,
         then: 1,
         cry: 1,
-        "you're": 1,
+        'you're': 1,
         getting: 1,
         it: 1,
       })
     )
     expect(
-      count("'First: don't laugh. Then: don't cry. You're getting it.'")
+      count(''First: don't laugh. Then: don't cry. You're getting it.'')
     ).toEqual(expectedCounts)
   })
 
@@ -78,7 +78,7 @@ describe('count()', () => {
     const expectedCounts = new Map(
       Object.entries({
         joe: 1,
-        "can't": 1,
+        'can't': 1,
         tell: 1,
         between: 1,
         app: 1,
@@ -87,7 +87,7 @@ describe('count()', () => {
         a: 1,
       })
     )
-    expect(count("Joe can't tell between app, apple and a.")).toEqual(
+    expect(count('Joe can't tell between app, apple and a.')).toEqual(
       expectedCounts
     )
   })
@@ -101,12 +101,12 @@ describe('count()', () => {
 
   it('alternating word separators not detected as a word', () => {
     const expectedCounts = new Map(Object.entries({ one: 1, two: 1, three: 1 }))
-    expect(count(",\n,one,\n ,two \n 'three'")).toEqual(expectedCounts)
+    expect(count(',\n,one,\n ,two \n 'three'')).toEqual(expectedCounts)
   })
 
   it('quotation for word with apostrophe', () => {
-    const expectedCounts = new Map(Object.entries({ can: 1, "can't": 2 }))
-    expect(count("can, can't, 'can't'")).toEqual(expectedCounts)
+    const expectedCounts = new Map(Object.entries({ can: 1, 'can't': 2 }))
+    expect(count('can, can't, 'can't'")).toEqual(expectedCounts)
   })
 
   it('handles properties that exist on Object’s prototype', () => {

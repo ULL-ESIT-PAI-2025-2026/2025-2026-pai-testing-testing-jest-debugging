@@ -44,7 +44,7 @@ export class LoginUser {
     const user = await this.userRepository.findByEmail(email);
 
     if (!user || user.password !== password) {
-      throw new Error("Invalid credentials");
+      throw new Error('Invalid credentials');
     }
 
     return this.generateToken(user);
@@ -53,13 +53,13 @@ export class LoginUser {
   private validateEmail(email: string) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      throw new Error("Invalid email format");
+      throw new Error('Invalid email format');
     }
   }
 
   private validatePassword(password: string) {
     if (password.length < 6) {
-      throw new Error("Password must be at least 6 characters");
+      throw new Error('Password must be at least 6 characters');
     }
   }
 

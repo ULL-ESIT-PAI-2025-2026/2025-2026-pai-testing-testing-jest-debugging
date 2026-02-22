@@ -23,8 +23,8 @@ export class ShoppingCart {
    * @param quantity 
    */
   add(name: string, price: number, quantity: number = 1): void {
-    if (price < 0) throw new Error("price must be >= 0");
-    if (quantity <= 0) throw new Error("quantity must be > 0");
+    if (price < 0) throw new Error('price must be >= 0');
+    if (quantity <= 0) throw new Error('quantity must be > 0');
 
     const existing = this.items.get(name);
     if (!existing) {
@@ -32,7 +32,7 @@ export class ShoppingCart {
       return;
     }
 
-    if (existing.price !== price) throw new Error("price mismatch");
+    if (existing.price !== price) throw new Error('price mismatch');
     existing.quantity += quantity;
   }
 
@@ -43,10 +43,10 @@ export class ShoppingCart {
    * @param quantity 
    */
   remove(name: string, quantity: number = 1) {
-    if (quantity <= 0) throw new Error("quantity must be > 0");
+    if (quantity <= 0) throw new Error('quantity must be > 0');
 
     const existing = this.items.get(name);
-    if (!existing) throw new Error("item not found");
+    if (!existing) throw new Error('item not found');
 
     if (quantity >= existing.quantity) {
       this.items.delete(name);

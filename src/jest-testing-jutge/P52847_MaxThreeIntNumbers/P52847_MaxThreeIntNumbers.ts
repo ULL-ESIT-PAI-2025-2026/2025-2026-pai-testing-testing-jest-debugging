@@ -22,25 +22,25 @@ import * as readline from 'readline';
  * @param {number} c Third number.
  * @returns {number} The maximum of the three numbers.
  */
-export function maxOfThree(a: number, b: number, c: number): number {
-  return Math.max(a, b, c);
+export function maxOfThree(first: number, second: number, third: number): number {
+  return Math.max(first, second, third);
 }
 
 /**
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.on('line', (line: string): void => {
-    const [a, b, c]: number[] = line.trim().split(/\s+/).map(Number);
-    console.log(maxOfThree(a, b, c));
+  readLineInterface.on('line', (line: string): void => {
+    const [first, second, third]: number[] = line.trim().split(/\s+/).map(Number);
+    console.log(maxOfThree(first, second, third));
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     process.exit(0);
   });
 }

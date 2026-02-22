@@ -4,15 +4,15 @@
  * Grado en Ingeniería Informática
  * Programación de Aplicaciones Interactivas (PAI)
  *
- * @file    user-factory.test.js
+ * @file    create-user.test.js
  * @author  Guillermo López Concepción
  * @date    17/02/2026
- * @desc    Tests for user-factory demonstrating toBe vs toEqual matchers.
+ * @desc    Tests for create-user demonstrating toBe vs toEqual matchers.
  */
 
-const {createUser} = require('./user-factory');
+const {createUser} = require('./create-user');
 
-describe('User Factory Matchers', () => {
+describe('Create User Matchers', () => {
   /**
    * Demonstrates deep equality for object content.
    */

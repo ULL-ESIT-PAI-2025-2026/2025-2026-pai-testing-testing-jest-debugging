@@ -18,14 +18,14 @@ import * as readline from 'readline';
 
 /**
  * @desc Returns an array of integers from a to b (inclusive).
- * @param {number} a The lower bound.
- * @param {number} b The upper bound.
- * @returns {number[]} The array of integers in the interval [a, b].
+ * @param {number} lowerBound The lower bound.
+ * @param {number} upperBound The upper bound.
+ * @returns {number[]} The array of integers in the interval [lowerBound, upperBound].
  */
-export function numbersInInterval(a: number, b: number): number[] {
+export function numbersInInterval(lowerBound: number, upperBound: number): number[] {
   const result: number[] = [];
-  for (let i: number = a; i <= b; i++) {
-    result.push(i);
+  for (let current: number = lowerBound; current <= upperBound; current++) {
+    result.push(current);
   }
   return result;
 }
@@ -34,17 +34,17 @@ export function numbersInInterval(a: number, b: number): number[] {
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.on('line', (line: string): void => {
-    const [a, b]: number[] = line.trim().split(/\s+/).map(Number);
-    console.log(numbersInInterval(a, b).join(','));
+  readLineInterface.on('line', (line: string): void => {
+    const [lowerBound, upperBound]: number[] = line.trim().split(/\s+/).map(Number);
+    console.log(numbersInInterval(lowerBound, upperBound).join(','));
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     process.exit(0);
   });
 }

@@ -7,6 +7,7 @@
  * @file    bank-account.ts
  * @author  Paula Díaz Jorge
  * @date    19/02/2026
+ * @desc   A simple bank account class with deposit, withdraw and getBalance methods.
  */
 
 /**
@@ -20,7 +21,7 @@ export class BankAccount {
    * @param amount Amount to deposit.
    */
   deposit(amount: number) {
-    if (amount <= 0) throw new Error("amount must be positive");
+    if (amount <= 0) throw new Error('amount must be positive');
     this.balance += amount;
   }
 
@@ -30,8 +31,8 @@ export class BankAccount {
    * @param amount Amount to withdraw.
    */
   withdraw(amount: number) {
-    if (amount <= 0) throw new Error("amount must be positive");
-    if (amount > this.balance) throw new Error("insufficient funds");
+    if (amount <= 0) throw new Error('amount must be positive');
+    if (amount > this.balance) throw new Error('insufficient funds');
     this.balance -= amount;
   }
 

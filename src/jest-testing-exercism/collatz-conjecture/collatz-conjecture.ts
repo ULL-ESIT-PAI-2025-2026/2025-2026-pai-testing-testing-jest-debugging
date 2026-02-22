@@ -20,7 +20,7 @@
  */
 export function steps(count: number): number {
   if (count <= 0 || !Number.isInteger(count)) {
-    throw new Error("Only positive integers are allowed")
+    throw new Error('Only positive integers are allowed')
   }
   // Base case
   if (count == 1) { return 0; } 

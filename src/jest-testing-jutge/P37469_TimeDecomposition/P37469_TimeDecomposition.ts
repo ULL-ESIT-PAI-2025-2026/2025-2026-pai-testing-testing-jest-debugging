@@ -39,18 +39,18 @@ export function decomposeTime(totalSeconds: number): [number, number, number] {
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.on('line', (line: string): void => {
+  readLineInterface.on('line', (line: string): void => {
     const totalSeconds: number = Number(line.trim());
     const [hours, minutes, seconds] = decomposeTime(totalSeconds);
     console.log(`${hours} ${minutes} ${seconds}`);
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     process.exit(0);
   });
 }

@@ -4,9 +4,10 @@
  * Grado en Ingeniería Informática
  * Programación de Aplicaciones Interactivas (PAI)
  *
- * @file    sleep.ts
+ * @file    08-sleep.ts
  * @author  Paula Díaz Jorge
  * @date    18/02/2026
+ * @desc    Function that stops actual thread's execution for a given time
  */
 
 /**

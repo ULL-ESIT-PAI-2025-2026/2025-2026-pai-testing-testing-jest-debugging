@@ -17,28 +17,28 @@ import * as readline from 'readline';
 
 /**
  * @desc Reverses the digits of a number.
- * @param {number} num The number to reverse.
+ * @param {number} number The number to reverse.
  * @returns {String} The reversed number.
  */
-export function reverseNumber(num: number): String {
-  return String(num).split('').reverse().join('');
+export function reverseNumber(number: number): String {
+  return String(number).split('').reverse().join('');
 }
 
 /**
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.on('line', (line: string): void => {
-    const num: number = Number(line.trim());
-    console.log(reverseNumber(num));
+  readLineInterface.on('line', (line: string): void => {
+    const number: number = Number(line.trim());
+    console.log(reverseNumber(number));
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     process.exit(0);
   });
 }

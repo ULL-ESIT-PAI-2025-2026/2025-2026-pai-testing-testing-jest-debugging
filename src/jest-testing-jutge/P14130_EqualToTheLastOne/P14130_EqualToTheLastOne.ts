@@ -40,18 +40,18 @@ export function countEqualToLast(sequence: number[]): number {
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
   const lines: string[] = [];
 
-  rl.on('line', (line: string): void => {
+  readLineInterface.on('line', (line: string): void => {
     lines.push(line.trim());
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     const sequence: number[] = lines[1].split(/\s+/).map(Number);
     console.log(countEqualToLast(sequence));
     process.exit(0);

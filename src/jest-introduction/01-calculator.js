@@ -10,6 +10,8 @@
  * @desc    Core logic for basic arithmetic operations.
  */
 
+'use strict';
+
 /**
  * Adds two numbers together.
  * @param {number} firstOperand The first number.

@@ -14,7 +14,7 @@ describe('Advanced Matchers Reference Guide', () => {
   
   /**
    * Section 1: Truthiness. 
-   * These help you be explicit about what "empty" or "false" means.
+   * These help you be explicit about what 'empty' or 'false' means.
    */
   test('Truthiness matchers demonstration', () => {
     const nullValue: null = null;

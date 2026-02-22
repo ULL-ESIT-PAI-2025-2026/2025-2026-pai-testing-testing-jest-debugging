@@ -11,6 +11,8 @@
  *          Used to demonstrate mocking and spying in Jest.
  */
 
+'use strict';
+
 /**
  * Sends a notification using the provided sender function.
  * @param {string} recipient The person to notify.

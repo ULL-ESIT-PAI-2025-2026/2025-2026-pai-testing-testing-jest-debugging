@@ -7,6 +7,8 @@
  * @file    shape.ts
  * @author  Paula Díaz Jorge
  * @date    19/02/2026
+ * @desc    A simple example of an abstract class representing geometric shapes, 
+ *          with concrete implementations for circles and rectangles.
  */
 
 /**

@@ -10,6 +10,8 @@
 * @desc    A collection of utility functions to demonstrate Jest matchers.
 */
 
+'use strict';
+
 /**
 * Returns an array of programming languages.
 * @return {string[]} A list of languages.

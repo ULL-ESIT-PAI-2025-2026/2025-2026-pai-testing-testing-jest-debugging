@@ -46,10 +46,10 @@ describe('Mock Functions with jest.fn()', () => {
    */
   test('mock sender can have a custom implementation', () => {
     const mockSender = jest.fn((recipient, message) => {
-      return `Sent "${message}" to ${recipient}`;
+      return `Sent '${message}' to ${recipient}`;
     });
     sendNotification('Diana', 'Test', mockSender);
-    expect(mockSender).toHaveReturnedWith('Sent "Test" to Diana');
+    expect(mockSender).toHaveReturnedWith(`Sent 'Test' to Diana`);
   });
 
   /**

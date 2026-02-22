@@ -18,35 +18,35 @@ import * as readline from 'readline';
 
 /**
  * @desc Calculates the n-th harmonic number.
- * @param {number} n The index of the harmonic number.
+ * @param {number} number The index of the harmonic number.
  * @returns {number} The harmonic number rounded to 4 decimals.
  */
-export function harmonicNumber(n: number): number {
-  if (n < 0) {
+export function harmonicNumber(number: number): number {
+  if (number < 0) {
     throw new Error('Input must be a positive integer.');
   }
-  let sum: number = 0;
-  for (let i: number = 1; i <= n; i++) {
-    sum += 1 / i;
+  let result: number = 0;
+  for (let i: number = 1; i <= number; i++) {
+    result += 1 / i;
   }
-  return parseFloat(sum.toFixed(4));
+  return parseFloat(result.toFixed(4));
 }
 
 /**
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.on('line', (line: string): void => {
+  readLineInterface.on('line', (line: string): void => {
     const n: number = Number(line.trim());
     console.log(harmonicNumber(n).toFixed(4));
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     process.exit(0);
   });
 }

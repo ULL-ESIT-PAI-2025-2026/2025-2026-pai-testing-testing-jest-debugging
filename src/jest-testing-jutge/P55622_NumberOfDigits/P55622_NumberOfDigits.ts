@@ -17,28 +17,28 @@ import * as readline from 'readline';
 
 /**
  * @desc Counts the number of digits in a non-negative integer.
- * @param {number} num The number whose digits to count.
+ * @param {number} number The number whose digits to count.
  * @returns {number} The number of digits.
  */
-export function numberOfDigits(num: number): number {
-  return String(Math.abs(num)).length;
+export function numberOfDigits(number: number): number {
+  return String(Math.abs(number)).length;
 }
 
 /**
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.on('line', (line: string): void => {
-    const num: number = Number(line.trim());
-    console.log(`The number of digits of ${num} is ${numberOfDigits(num)}.`);
+  readLineInterface.on('line', (line: string): void => {
+    const number: number = Number(line.trim());
+    console.log(`The number of digits of ${number} is ${numberOfDigits(number)}.`);
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     process.exit(0);
   });
 }

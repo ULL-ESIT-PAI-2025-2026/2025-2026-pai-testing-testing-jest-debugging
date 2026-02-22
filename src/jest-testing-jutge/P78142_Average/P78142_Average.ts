@@ -25,7 +25,7 @@ export function average(numbers: number[]): number {
   if (numbers.length === 0) {
     throw new Error('The array must not be empty.');
   }
-  const sum: number = numbers.reduce((acc, val) => acc + val, 0);
+  const sum: number = numbers.reduce((accumulator, value) => accumulator + value, 0);
   return parseFloat((sum / numbers.length).toFixed(2));
 }
 
@@ -33,19 +33,19 @@ export function average(numbers: number[]): number {
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
   let allNumbers: number[] = [];
 
-  rl.on('line', (line: string): void => {
-    const nums: number[] = line.trim().split(/\s+/).map(Number);
-    allNumbers = allNumbers.concat(nums);
+  readLineInterface.on('line', (line: string): void => {
+    const numbers: number[] = line.trim().split(/\s+/).map(Number);
+    allNumbers = allNumbers.concat(numbers);
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     console.log(average(allNumbers).toFixed(2));
     process.exit(0);
   });

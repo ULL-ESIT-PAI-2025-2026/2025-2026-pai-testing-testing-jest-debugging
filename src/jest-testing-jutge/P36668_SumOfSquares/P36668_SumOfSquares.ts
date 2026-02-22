@@ -18,31 +18,31 @@ import * as readline from 'readline';
 
 /**
  * @desc Calculates the sum of squares from 1 to n.
- * @param {number} n The upper limit.
+ * @param {number} number The upper limit.
  * @returns {number} The sum 1² + 2² + ... + n².
  */
-export function sumOfSquares(n: number): number {
-  if (n < 0) {
+export function sumOfSquares(number: number): number {
+  if (number < 0) {
     throw new Error('Input must be a non-negative integer.');
   }
-  return (n * (n + 1) * (2 * n + 1)) / 6;
+  return (number * (number + 1) * (2 * number + 1)) / 6;
 }
 
 /**
  * @desc Main function that reads input and prints the result.
  */
 function main(): void {
-  const rl: readline.Interface = readline.createInterface({
+  const readLineInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
-  rl.on('line', (line: string): void => {
-    const n: number = Number(line.trim());
-    console.log(sumOfSquares(n));
+  readLineInterface.on('line', (line: string): void => {
+    const number: number = Number(line.trim());
+    console.log(sumOfSquares(number));
   });
 
-  rl.on('close', (): void => {
+  readLineInterface.on('close', (): void => {
     process.exit(0);
   });
 }

@@ -14,7 +14,7 @@
 /**
  * @desc String containing all lowercase letters of the alphabet.
  */
-const ALPHA = "abcdefghijklmnopqrstuvwxyz";
+const ALPHA = 'abcdefghijklmnopqrstuvwxyz';
 
 /**
  * @desc Encodes plain text using the Atbash cipher, 
@@ -24,7 +24,7 @@ const ALPHA = "abcdefghijklmnopqrstuvwxyz";
  */
 export function encode(plainText: string): string {
   return transcode(plainText).reduce((prev, value, index) => 
-         prev += (index === 0) || (index % 5) ? value : " " + value, "");
+         prev += (index === 0) || (index % 5) ? value : ' ' + value, '');
 }
 
 /**
@@ -33,7 +33,7 @@ export function encode(plainText: string): string {
  * @returns {string} The decoded text.
  */
 export function decode(cipherText: string): string {
-  return transcode(cipherText).join("");
+  return transcode(cipherText).join('');
 }
 
 /**
@@ -43,7 +43,7 @@ export function decode(cipherText: string): string {
  * @returns {string[]} Array of transcoded characters.
  */
 function transcode(text: string): string[] {
-  return Array.from(text.replace(/\W/g, "").toLowerCase())
+  return Array.from(text.replace(/\W/g, '').toLowerCase())
               .map(character => character.match(/\d/) ? 
                    character : ALPHA.charAt(25 - ALPHA.indexOf(character)));
 }
