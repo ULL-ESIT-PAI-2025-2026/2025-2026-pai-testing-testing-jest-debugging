@@ -11,7 +11,7 @@
  *          (jest.spyOn). Covers call tracking, return values, and spy cleanup.
  */
 
-const { sendNotification, formatItems, logger } = require('./06-notification-service');
+const { sendNotification, formatItems, logger } = require('./notification-service');
 
 describe('Mock Functions with jest.fn()', () => {
   /**

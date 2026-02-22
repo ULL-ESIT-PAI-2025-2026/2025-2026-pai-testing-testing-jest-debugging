@@ -13,7 +13,7 @@
  */
 
 import { expect, describe, test, beforeEach, afterEach, beforeAll, afterAll } from '@jest/globals';
-import { ShoppingCart, CartItem } from './07-shopping-cart';
+import { ShoppingCart, CartItem } from './shopping-cart';
 
 /**
  * Demonstrates beforeAll / afterAll for one-time setup shared by all tests.

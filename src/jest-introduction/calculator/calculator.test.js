@@ -10,7 +10,7 @@
  * @desc    Unit tests for the calculator module using Jest.
  */
 
-const {add} = require('./01-calculator');
+const {add} = require('./calculator');
 
 describe('Calculator Logic', () => {
   /**

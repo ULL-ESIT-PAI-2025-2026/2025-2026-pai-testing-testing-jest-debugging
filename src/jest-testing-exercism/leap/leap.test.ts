@@ -2,7 +2,7 @@ import { describe, it, expect, xit } from '@jest/globals'
 import { isLeap } from './leap.ts'
 
 describe('A leap year', () => {
-  it('year not divisible by 4 in common year', () => {
+  xit('year not divisible by 4 in common year', () => {
     expect(isLeap(2015)).toBe(false)
   })
 

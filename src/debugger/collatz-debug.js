@@ -30,26 +30,21 @@ function getCollatzSequence(n) {
       current = (current * 3) + 1;
     }
     sequence.push(current);
-    
     // 🚩 STEP 2: Use the 'Watch' panel to track the 'current' variable
     // current % 2 === 0
     console.log('Current value:', current);
   }
-
   return sequence;
 }
 
-/**
- * Main execution point.
- */
+/** Main execution point.*/
 function main() {
   const startNumber = 6;
   console.log(`Starting Collatz sequence for: ${startNumber}`);
-  
   const result = getCollatzSequence(startNumber);
-  
   console.log('Sequence finished:', result.join(' -> '));
 }
+
 if (require.main === module) {
   main();
 }

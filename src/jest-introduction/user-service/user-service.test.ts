@@ -11,7 +11,7 @@
  */
 
 import {expect, describe, test} from '@jest/globals';
-import {getAdminUser, User} from './04-user-service';
+import {getAdminUser, User} from './user-service';
 
 describe('User Service Matchers (TS)', () => {
   /**

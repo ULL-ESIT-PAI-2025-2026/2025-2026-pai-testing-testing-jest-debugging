@@ -11,7 +11,7 @@
  */
 
 import { expect, describe, test } from '@jest/globals';
-import {getNextCollatz} from './02-sequence-utils';
+import {getNextCollatz} from './sequence-utils';
 
 describe('Collatz Sequence Utilities', () => {
   /**

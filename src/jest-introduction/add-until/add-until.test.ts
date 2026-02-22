@@ -11,7 +11,7 @@
  *         with performance.now() 
  */
 
-import { addUntil } from './05-add-until';
+import { addUntil } from './add-until';
 const { performance } = require('node:perf_hooks');
 
 describe('addUntil function tests', () => {

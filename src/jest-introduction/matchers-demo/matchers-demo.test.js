@@ -10,7 +10,7 @@
  * @desc    Tests demonstrating common Jest matchers in JavaScript.
  */
 
-const {getLanguages, isPositive} = require('./03-matchers-demo');
+const {getLanguages, isPositive} = require('./matchers-demo');
 
 describe('Common Matchers Suite (JS)', () => {
   /**

@@ -1,7 +1,7 @@
 {
-  "name": "testing-jutge",
+  "name": "testing-matchers",
   "version": "1.0.0",
-  "description": "Jest testing for Jutge exercises.",
+  "description": "Jest matchers demonstration examples.",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
@@ -10,7 +10,7 @@
   "keywords": [
     "jest",
     "testing",
-    "fractions"
+    "matchers"
   ],
   "author": "",
   "license": "ISC",

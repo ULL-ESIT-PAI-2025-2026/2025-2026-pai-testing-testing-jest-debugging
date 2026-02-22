@@ -12,7 +12,7 @@
  *          (if the test exceeds the time limit, it fails)
  */
 
-import { sleep } from './08-sleep';
+import { sleep } from './sleep';
 
 describe('sleep function test', () => {
   test('FAILS because it exceeds 10ms (real async with setTimeout)', async () => {

@@ -10,7 +10,7 @@
  * @desc    Tests for User class to show BDD testing with Jest
  */
 
-import { LoginUser, FakeUserRepository, User } from './09-user';
+import { LoginUser, FakeUserRepository, User } from './user';
 
 /**
  * @desc BDD tests for LoginUser class using Jest
