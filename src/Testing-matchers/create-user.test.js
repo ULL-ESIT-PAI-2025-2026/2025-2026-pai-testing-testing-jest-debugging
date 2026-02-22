@@ -32,6 +32,6 @@ describe('Create User Matchers', () => {
     // expect(result).toBe(expected); 
     
     // SUCCESS: result is NOT the same instance as expected.
-    expect(result).not.toBe(expected);
+    expect(result).toBe(expected);
   });
 });
