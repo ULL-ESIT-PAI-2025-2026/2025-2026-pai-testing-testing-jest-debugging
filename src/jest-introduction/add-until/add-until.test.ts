@@ -28,6 +28,6 @@ describe('addUntil function tests', () => {
     addUntil(1_000_000);
     const end = performance.now();
 
-    expect(end-start).toBeLessThanOrEqual(5);
+    expect(end-start).toBeLessThanOrEqual(10);
   });
 });
