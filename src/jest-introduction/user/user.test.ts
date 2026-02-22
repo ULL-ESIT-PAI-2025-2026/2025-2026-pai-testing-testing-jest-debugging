@@ -27,10 +27,8 @@ describe('LoginUser - BDD', () => {
   test('Given valid credentials When login Then returns token', async () => {
     // Given
     repository.addUser(new User('test@mail.com', '123456'));
-
     // When
     const token = await loginUser.execute('test@mail.com', '123456');
-
     // Then
     expect(token).toBe('token-test@mail.com');
   });
@@ -45,7 +43,6 @@ describe('LoginUser - BDD', () => {
   test('Given existing user When password is wrong Then throws error', async () => {
     // Given
     repository.addUser(new User('test@mail.com', '123456'));
-
     // When & Then
     await expect(
       loginUser.execute('test@mail.com', 'wrongpass')

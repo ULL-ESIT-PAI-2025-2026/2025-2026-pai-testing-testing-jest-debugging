@@ -18,11 +18,19 @@
 export abstract class Shape {
   constructor(protected color: string) {}
 
-  /**
-   * @desc  Returns the color of the shape.
-   */
+  /** @desc  Returns the color of the shape. */
   getColor() {
     return this.color;
+  }
+
+  /** @desc  Returns the area of the shape. */
+  getArea() {
+    return this.area();
+  }
+
+  /** @desc  Returns a string representation of the shape. */
+  toString() {
+    return `Shape(color: ${this.color})`;
   }
 
   /**
@@ -33,7 +41,8 @@ export abstract class Shape {
 }
 
 /**
- * @desc  A concrete implementation of Shape representing a circle, with a radius and an area calculation.
+ * @desc  A concrete implementation of Shape representing a circle, 
+ *        with a radius and an area calculation.
  */
 export class Circle extends Shape {
   constructor(color: string, private radius: number) {
@@ -50,7 +59,8 @@ export class Circle extends Shape {
 }
 
 /**
- * @desc  A concrete implementation of Shape representing a rectangle, with width, height and an area calculation.
+ * @desc  A concrete implementation of Shape representing a rectangle, 
+ *        with width, height and an area calculation.
  */
 export class Rectangle extends Shape {
   constructor(color: string, private width: number, private height: number) {

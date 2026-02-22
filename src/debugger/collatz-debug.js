@@ -15,13 +15,12 @@
 
 /**
  * Computes the steps of the Collatz sequence and logs them.
- * @param {number} n - The starting positive integer.
+ * @param {number} number - The starting positive integer.
  * @return {number[]} The complete sequence of numbers.
  */
-function getCollatzSequence(n) {
-  const sequence = [n];
-  let current = n;
-
+function getCollatzSequence(number) {
+  const sequence = [number];
+  let current = number;
   // 🚩 STEP 1: Put a breakpoint on the while line below
   while (current > 1) {
     if (current % 2 === 0) {
@@ -37,7 +36,6 @@ function getCollatzSequence(n) {
   return sequence;
 }
 
-/** Main execution point.*/
 function main() {
   const startNumber = 6;
   console.log(`Starting Collatz sequence for: ${startNumber}`);
